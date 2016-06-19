@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TSP REST API -V1.1</title>
+<script type="text/javascript" src="oXHR.js"></script>
+<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+<!-- function that sends Data to the Machine learning server side ->> 
+	function request(callback) {
+		var xhr = getXMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+				callback(xhr.responseText);
+			}
+		};
+		// Reading data as .json from the distanceMatrix and sending it to server side for machine learning purposes
+		$.getJSON("distanceMatrix.json", function(json) {
+			var data = JSON.stringify(json);
+			xhr.open("GET", "rest_receive.php?distances=" + data, true);
+			xhr.send(null);
+			var update =document.getElementById("content");
+			update.innerHTML=" </br> File distanceMatrix.json sent to Machine Learning Side...."
+			update.innerHTML+=" </br> Waiting for Data from Machine Learning Side...."
+
+
+		});
+	}
+<!-- function that receives Data from the Machine learning server side ->> 
+	function readData(sData) {
+		// Here we receive the data after its processing in the server 
+		var update =document.getElementById("content");
+		update.innerHTML+=" </br> Data has Been Received Back. Check Consol.log"
+		sData=JSON.parse(sData);
+		console.log(sData);
+	}
+</script>
+</head>
+<body>
+<form>
+<input type="button" onclick="request(readData);" value="Send Data" />
+</form>
+<p id="content" > </p>
+</body>
+</html>

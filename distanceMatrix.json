@@ -1,0 +1,23 @@
+{	
+	"Time_window":{
+		"Casablanca": 20,
+		"Mohemedia": 30,
+		"Fez": 20,
+		"Rabat": 40,
+		"Marrakesh": 30
+	},
+	"Distances": {
+		"Casablanca": {
+			"Rabat": 200,
+			"Mohemedia": 30,
+			"Fez": 300,
+			"Marrakesh": 300
+		},
+		"Rabat": {
+			"Casablanca": 100,
+			"Mohemedia": 70,
+			"Fez": 200,
+			"Marrakesh": 400
+		}
+	}
+}
