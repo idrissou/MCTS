@@ -1,4 +1,14 @@
 {	
+	"path":{
+		"start": "Rabat",
+		"End": "Rabat"
+	},"Visited":{
+		"Casablanca": 1,
+		"Mohemedia": 0,
+		"Fez": 1,
+		"Rabat": x,
+		"Marrakesh": 0
+	},	
 	"Time_window":{
 		"Casablanca": 20,
 		"Mohemedia": 30,
